@@ -1,6 +1,6 @@
 {
-    "name": "prueba_app",
-    "short_name": "prueba_app",
+    "name": "flutter_application_agro",
+    "short_name": "flutter_application_agro",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

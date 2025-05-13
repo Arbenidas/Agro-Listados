@@ -5,28 +5,30 @@ class CreateListScreen extends StatelessWidget {
   final TextEditingController _puntoController = TextEditingController();
   final TextEditingController _fechaController = TextEditingController();
 
+  CreateListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Proveedor - Creando la lista")),
+      appBar: AppBar(title: const Text("Proveedor - Creando la lista")),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             TextField(
               controller: _puntoController,
-              decoration: InputDecoration(labelText: "Punto"),
+              decoration: const InputDecoration(labelText: "Punto"),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
               controller: _fechaController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Fecha",
                 suffixIcon: Icon(Icons.calendar_today),
               ),
               keyboardType: TextInputType.datetime,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -38,7 +40,7 @@ class CreateListScreen extends StatelessWidget {
                           )),
                 );
               },
-              child: Text("Siguiente"),
+              child: const Text("Siguiente"),
             ),
           ],
         ),

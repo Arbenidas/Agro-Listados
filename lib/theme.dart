@@ -10,14 +10,14 @@ const Color textDarkGreen = Color(0xFF1B5E20); // Very dark green
 final ThemeData veggieMarketTheme = ThemeData(
   primaryColor: primaryGreen,
   scaffoldBackgroundColor: backgroundGreen,
-  colorScheme: ColorScheme.light(
+  colorScheme: const ColorScheme.light(
     primary: primaryGreen,
     secondary: accentGreen,
     surface: backgroundGreen,
     onPrimary: Colors.white,
     onSecondary: Colors.white,
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     headlineMedium: TextStyle(
       color: textDarkGreen,
       fontWeight: FontWeight.bold,
@@ -37,15 +37,15 @@ final ThemeData veggieMarketTheme = ThemeData(
     fillColor: Colors.white,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: lightGreen),
+      borderSide: const BorderSide(color: lightGreen),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: primaryGreen, width: 2),
+      borderSide: const BorderSide(color: primaryGreen, width: 2),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: lightGreen),
+      borderSide: const BorderSide(color: lightGreen),
     ),
   ),
 );

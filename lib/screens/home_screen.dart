@@ -22,29 +22,29 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: Duration(milliseconds: 1200),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.0, 0.65, curve: Curves.easeOut),
+        curve: Interval(0.0, 0.65, curve: Curves.easeOut),
       ),
     );
 
     _slideAnimation1 =
-        Tween<Offset>(begin: const Offset(0.5, 0), end: Offset.zero).animate(
+        Tween<Offset>(begin: Offset(0.5, 0), end: Offset.zero).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.2, 0.7, curve: Curves.easeOut),
+        curve: Interval(0.2, 0.7, curve: Curves.easeOut),
       ),
     );
 
     _slideAnimation2 =
-        Tween<Offset>(begin: const Offset(-0.5, 0), end: Offset.zero).animate(
+        Tween<Offset>(begin: Offset(-0.5, 0), end: Offset.zero).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.3, 0.8, curve: Curves.easeOut),
+        curve: Interval(0.3, 0.8, curve: Curves.easeOut),
       ),
     );
 
@@ -61,11 +61,11 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LogiTruck'),
+        title: Text('LogiTruck - Proveedor'),
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.person_outline),
+            icon: Icon(Icons.person_outline),
             onPressed: () {},
           ),
         ],
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               FadeTransition(
                 opacity: _fadeAnimation,
                 child: Text(
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen>
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8),
               FadeTransition(
                 opacity: _fadeAnimation,
                 child: Text(
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Expanded(
                 child: SlideTransition(
                   position: _slideAnimation1,
@@ -106,16 +106,18 @@ class _HomeScreenState extends State<HomeScreen>
                       description:
                           'Revisa tus listas anteriores por fecha y punto',
                       onTap: () {
+                        // Navegación simplificada
                         Navigator.push(
                           context,
-                          SlideRightRoute(page: const ListHistoryScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => ListHistoryScreen()),
                         );
                       },
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Expanded(
                 child: SlideTransition(
                   position: _slideAnimation2,
@@ -127,16 +129,18 @@ class _HomeScreenState extends State<HomeScreen>
                       description:
                           'Crea una nueva lista para tus puntos de distribución',
                       onTap: () {
+                        // Navegación simplificada
                         Navigator.push(
                           context,
-                          SlideUpRoute(page: const CreateListScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => CreateListScreen()),
                         );
                       },
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
             ],
           ),
         ),
@@ -160,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen>
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 10,
-              offset: const Offset(0, 4),
+              offset: Offset(0, 4),
             ),
           ],
         ),
@@ -184,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen>
                       size: 80,
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Text(
                       title,
                       style: TextStyle(
@@ -194,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8),
                     Text(
                       description,
                       style: TextStyle(

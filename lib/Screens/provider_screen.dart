@@ -3,12 +3,14 @@ import 'create_list_screen.dart';
 import '../widgets/list_card.dart';
 
 class ProviderScreen extends StatelessWidget {
+  const ProviderScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Proveedor - Lista creada"),
-        actions: [
+        title: const Text("Proveedor - Lista creada"),
+        actions: const [
           Row(
             children: [
               Text("Sesión Iniciada"),
@@ -19,7 +21,7 @@ class ProviderScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         children: [
           ListCard(title: "San Martín", details: "Lote productos: 1kg"),
           ListCard(title: "Aborí", details: "Lote productos: 2.00kg"),
@@ -33,7 +35,7 @@ class ProviderScreen extends StatelessWidget {
           );
         },
         backgroundColor: Colors.green,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

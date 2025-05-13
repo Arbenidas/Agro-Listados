@@ -114,7 +114,7 @@ class _CreateListScreenState extends State<CreateListScreen>
                 _showAddProductDialog();
               },
               backgroundColor: Theme.of(context).colorScheme.primary,
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             )
           : null,
       body: SafeArea(

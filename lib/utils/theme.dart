@@ -10,14 +10,14 @@ const Color textDarkGreen = Color(0xFF1B5E20); // Very dark green
 final ThemeData veggieMarketTheme = ThemeData(
   primaryColor: primaryGreen,
   scaffoldBackgroundColor: backgroundGreen,
-  colorScheme: ColorScheme.light(
+  colorScheme: const ColorScheme.light(
     primary: primaryGreen,
     secondary: accentGreen,
     surface: backgroundGreen,
     onPrimary: Colors.white,
     onSecondary: Colors.white,
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     displayLarge: TextStyle(
       color: textDarkGreen,
       fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ final ThemeData veggieMarketTheme = ThemeData(
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       foregroundColor: primaryGreen,
-      side: BorderSide(color: primaryGreen, width: 2),
+      side: const BorderSide(color: primaryGreen, width: 2),
       padding: const EdgeInsets.symmetric(vertical: 15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
     ),
@@ -54,15 +54,15 @@ final ThemeData veggieMarketTheme = ThemeData(
     contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: lightGreen),
+      borderSide: const BorderSide(color: lightGreen),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: primaryGreen, width: 2),
+      borderSide: const BorderSide(color: primaryGreen, width: 2),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(color: lightGreen),
+      borderSide: const BorderSide(color: lightGreen),
     ),
     prefixIconColor: primaryGreen,
     suffixIconColor: primaryGreen,

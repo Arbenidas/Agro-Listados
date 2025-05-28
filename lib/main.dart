@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/login_screen.dart';
 import 'utils/theme.dart';
+import 'services/database_service.dart'; // Import the DatabaseService
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Solo para desarrollo - reiniciar la base de datos
+  try {
+    await DatabaseService().resetDatabase();
+    print('Base de datos reiniciada correctamente');
+  } catch (e) {
+    print('Error al reiniciar la base de datos: $e');
+  }
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -22,7 +32,6 @@ class MyApp extends StatelessWidget {
       theme: veggieMarketTheme,
       home: const LoginScreen(),
       debugShowCheckedModeBanner: false,
-      // Añadir key para forzar reconstrucción
       key: UniqueKey(),
     );
   }

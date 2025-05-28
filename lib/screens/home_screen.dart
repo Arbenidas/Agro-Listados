@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:logitruck_app/screens/create_list_screen.dart';
 import 'list_history_screen.dart';
-import 'create_list_screen.dart';
-import '../utils/page_transition.dart';
+import '../widgets/logout_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,29 +22,29 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1200),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Interval(0.0, 0.65, curve: Curves.easeOut),
+        curve: const Interval(0.0, 0.65, curve: Curves.easeOut),
       ),
     );
 
     _slideAnimation1 =
-        Tween<Offset>(begin: Offset(0.5, 0), end: Offset.zero).animate(
+        Tween<Offset>(begin: const Offset(0.5, 0), end: Offset.zero).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Interval(0.2, 0.7, curve: Curves.easeOut),
+        curve: const Interval(0.2, 0.7, curve: Curves.easeOut),
       ),
     );
 
     _slideAnimation2 =
-        Tween<Offset>(begin: Offset(-0.5, 0), end: Offset.zero).animate(
+        Tween<Offset>(begin: const Offset(-0.5, 0), end: Offset.zero).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Interval(0.3, 0.8, curve: Curves.easeOut),
+        curve: const Interval(0.3, 0.8, curve: Curves.easeOut),
       ),
     );
 
@@ -61,13 +61,10 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('LogiTruck - Proveedor'),
+        title: const Text('LogiTruck - Proveedor'),
         elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.person_outline),
-            onPressed: () {},
-          ),
+        actions: const [
+          LogoutButton(),
         ],
       ),
       body: SafeArea(
@@ -76,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               FadeTransition(
                 opacity: _fadeAnimation,
                 child: Text(
@@ -85,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               FadeTransition(
                 opacity: _fadeAnimation,
                 child: Text(
@@ -94,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen>
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Expanded(
                 child: SlideTransition(
                   position: _slideAnimation1,
@@ -106,18 +103,17 @@ class _HomeScreenState extends State<HomeScreen>
                       description:
                           'Revisa tus listas anteriores por fecha y punto',
                       onTap: () {
-                        // Navegación simplificada
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ListHistoryScreen()),
+                              builder: (context) => const ListHistoryScreen()),
                         );
                       },
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Expanded(
                 child: SlideTransition(
                   position: _slideAnimation2,
@@ -129,18 +125,17 @@ class _HomeScreenState extends State<HomeScreen>
                       description:
                           'Crea una nueva lista para tus puntos de distribución',
                       onTap: () {
-                        // Navegación simplificada
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreateListScreen()),
+                              builder: (context) => const CreateListScreen()),
                         );
                       },
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -164,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen>
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 10,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -188,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen>
                       size: 80,
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       title,
                       style: TextStyle(
@@ -198,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       description,
                       style: TextStyle(

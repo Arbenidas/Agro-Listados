@@ -6,15 +6,19 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
   intl: ^0.18.0
-  pdf: ^3.11.3
-  printing: ^5.14.2
+  pdf: ^3.10.4
+  printing: ^5.11.0
+  path_provider: ^2.1.1
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  crypto: ^3.0.3
 
 dev_dependencies:
   flutter_test:
